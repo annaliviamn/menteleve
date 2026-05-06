@@ -2,60 +2,263 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Clínica Mente Leve</title>
+
     <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
 
 <body>
 
-    <header>
-        <h1>Clínica Mente Leve</h1>
-        <p>Cuidando da sua saúde mental com acolhimento e profissionalismo</p>
-        <button>Agendar Consulta</button>
+    <!-- ========= NAVBAR ========= -->
+
+    <nav class="navbar" id="navbar" aria-label="Navegação principal">
+        <div class="nav-inner">
+
+            <a href="#hero" class="nav-logo" aria-label="Ir para o topo">
+                <span class="logo-text">Mente Leve</span>
+            </a>
+
+            <ul class="nav-links" id="navLinks" role="list">
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#servicos">Serviços</a></li>
+                <li><a href="#depoimentos">Depoimentos</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+
+            <button class="nav-cta" id="btnContato">
+                Agendar Consulta
+            </button>
+
+            <button
+                class="hamburger"
+                id="hamburger"
+                aria-label="Abrir menu"
+                aria-expanded="false"
+            >
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+        </div>
+    </nav>
+
+
+    <!-- ========= HERO ========= -->
+
+    <header class="hero" id="hero">
+
+        <div class="hero-content">
+
+            <h1>
+                Clínica Mente Leve
+            </h1>
+
+            <p class="hero-subtitle">
+                Cuidando da sua saúde mental
+                com acolhimento e equilíbrio.
+            </p>
+
+            <p>
+                Atendimento psicológico humanizado para ajudar você
+                a viver com mais leveza, segurança emocional e qualidade de vida.
+            </p>
+
+            <div class="hero-buttons">
+                <button class="btn-primary" id="heroBtn">
+                    Agendar Consulta
+                </button>
+
+                <a href="#sobre" class="btn-secondary">
+                    Conheça a clínica
+                </a>
+            </div>
+
+        </div>
+
     </header>
 
-    <section>
-        <h2>Sobre nós</h2>
-        <p>Na Clínica Mente Leve, oferecemos atendimento psicológico com foco no bem-estar emocional e qualidade de vida.</p>
+
+    <!-- ========= SOBRE ========= -->
+
+    <section class="sobre" id="sobre">
+
+        <div class="sobre-grid">
+
+            <div class="sobre-texto">
+
+                
+
+                <h2>
+                    Um espaço acolhedor para cuidar da sua mente.
+                </h2>
+
+                <p>
+                    Na Clínica Mente Leve, acreditamos que saúde mental
+                    deve ser tratada com empatia, escuta ativa e acolhimento.
+                    Nosso objetivo é oferecer um ambiente seguro para que cada
+                    paciente se sinta confortável durante todo o processo terapêutico.
+                </p>
+
+                <div class="sobre-info">
+                    <div>
+                        <strong>+500</strong>
+                        <span>Pacientes atendidos</span>
+                    </div>
+
+                    <div>
+                        <strong>100%</strong>
+                        <span>Atendimento humanizado</span>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="sobre-img-wrapper">
+                <img
+                    src="clinica.jpg"
+                    alt="Consultório acolhedor da Clínica Mente Leve"
+                >
+            </div>
+
+        </div>
+
     </section>
 
-    <section>
-        <h2>Serviços</h2>
 
-    <div class="cards">
+    <!-- ========= SERVIÇOS ========= -->
 
-    <div class="card terapia">
-        <div class="overlay">
-            <h3>Terapia Individual</h3>
-            <p>Atendimento focado no autoconhecimento e equilíbrio emocional.</p>
+    <section class="servicos" id="servicos">
+
+        <div class="section-header">
+            
+            <h2>Atendimentos pensados para cada necessidade.</h2>
         </div>
-    </div>
 
-    <div class="card casal">
-        <div class="overlay">
-            <h3>Terapia de Casal</h3>
-            <p>Auxílio na comunicação e fortalecimento de relações.</p>
+
+        <div class="cards">
+
+            <div class="card terapia">
+                <div class="overlay">
+                    <h3>Terapia Individual</h3>
+                    <p>
+                        Atendimento focado no autoconhecimento,
+                        equilíbrio emocional e desenvolvimento pessoal.
+                    </p>
+                </div>
+            </div>
+
+
+            <div class="card casal">
+                <div class="overlay">
+                    <h3>Terapia de Casal</h3>
+                    <p>
+                        Auxílio na comunicação, fortalecimento de vínculos
+                        e resolução de conflitos.
+                    </p>
+                </div>
+            </div>
+
+
+            <div class="card online">
+                <div class="overlay">
+                    <h3>Atendimento Online</h3>
+                    <p>
+                        Sessões práticas e seguras para cuidar da sua saúde
+                        mental de qualquer lugar.
+                    </p>
+                </div>
+            </div>
+
         </div>
-    </div>
 
-    <div class="card online">
-        <div class="overlay">
-            <h3>Atendimento Online</h3>
-            <p>Flexibilidade para cuidar da sua saúde mental de onde estiver.</p>
-        </div>
-    </div>
-
-</div>
     </section>
 
-    <section>
-        <h2>Contato</h2>
-        <form>
-            <input type="text" placeholder="Seu Nome" required>
-            <input type="email" placeholder="Seu email" required>
-            <textarea placeholder="Sua mensagem"></textarea>
-            <button type="submit">Enviar</button>
+
+    <!-- ========= DEPOIMENTOS ========= -->
+
+    <section class="depoimentos" id="depoimentos">
+
+        <div class="section-header">
+            
+            <h2>Experiências de quem encontrou mais leveza.</h2>
+        </div>
+
+
+        <div class="depoimentos-grid">
+
+            <article class="depoimento-card">
+                <p>
+                    “O acolhimento da clínica fez toda diferença no meu processo.
+                    Me senti segura desde a primeira sessão.”
+                </p>
+
+                <strong>— Mariana S.</strong>
+            </article>
+
+
+            <article class="depoimento-card">
+                <p>
+                    “As sessões online me ajudaram muito a manter a rotina
+                    de terapia mesmo com a correria do dia a dia.”
+                </p>
+
+                <strong>— Lucas M.</strong>
+            </article>
+
+        </div>
+
+    </section>
+
+
+    <!-- ========= CONTATO ========= -->
+
+    <section class="contato" id="contato">
+
+        <div class="section-header">
+            
+            <h2>Agende sua consulta.</h2>
+        </div>
+
+
+        <form class="contato-form">
+
+            <input
+                type="text"
+                placeholder="Seu nome"
+                required
+            >
+
+            <input
+                type="email"
+                placeholder="Seu e-mail"
+                required
+            >
+
+            <textarea
+                placeholder="Escreva sua mensagem"
+                rows="5"
+            ></textarea>
+
+            <button type="submit" class="btn-primary">
+                Enviar mensagem
+            </button>
+
         </form>
+
     </section>
+
+
+    <!-- ========= FOOTER ========= -->
+
+    <footer class="footer">
+        <p>
+            © 2026 Clínica Mente Leve • Todos os direitos reservados.
+        </p>
+    </footer>
+
 </body>
 </html>

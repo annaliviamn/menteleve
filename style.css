@@ -1,190 +1,474 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-body{
-    font-family: 'Segoe UI', sans-serif;
-    background-color: #F7F9F8;
-    color: #333333;
+
+/* ========= VARIÁVEIS ========= */
+
+:root {
+  --verde-principal: #4A7C59;
+  --verde-claro: #A8D5BA;
+
+  --texto: #333333;
+  --texto-suave: #5F6B63;
+
+  --branco: #ffffff;
+  --fundo: #F7F9F8;
+
+  --sombra: 0 10px 30px rgba(0,0,0,0.08);
+
+  --radius: 24px;
 }
 
-header {
-  background: linear-gradient(rgba(168,213,186,0.8), rgba(168,213,186,0.8)),
-              url("clinica.jpg");
+
+/* ========= BODY ========= */
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: var(--fundo);
+  color: var(--texto);
+
+  line-height: 1.6;
+}
+
+
+/* ========= NAVBAR ========= */
+
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+
+  z-index: 1000;
+
+  background: rgba(255,255,255,0.75);
+  backdrop-filter: blur(14px);
+
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+.nav-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+
+  padding: 18px 24px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-logo {
+  text-decoration: none;
+}
+
+.logo-text {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--verde-principal);
+}
+
+.nav-links {
+  display: flex;
+  gap: 32px;
+
+  list-style: none;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--texto);
+
+  font-weight: 500;
+  transition: 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: var(--verde-principal);
+}
+
+.nav-cta {
+  background: var(--verde-principal);
+  color: white;
+
+  border: none;
+  padding: 12px 18px;
+  border-radius: 14px;
+
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.nav-cta:hover {
+  background: #3a6447;
+  transform: translateY(-2px);
+}
+
+
+/* ========= HAMBURGER ========= */
+
+.hamburger {
+  display: none;
+
+  background: transparent;
+  border: none;
+
+  cursor: pointer;
+}
+
+.hamburger span {
+  width: 24px;
+  height: 2px;
+
+  background: var(--texto);
+
+  display: block;
+  margin: 5px 0;
+}
+
+
+/* ========= HERO ========= */
+
+.hero {
+  min-height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+
+  padding: 140px 20px 80px;
+
+  background:
+    linear-gradient(rgba(168,213,186,0.75),
+    rgba(168,213,186,0.75)),
+    url("clinica.jpg");
+
   background-size: cover;
   background-position: center;
-  text-align: center;
-  padding: 100px 20px;
-  color: #2F2F2F;
 }
 
-header h1 {
-    font-size: 48px;
-    margin-bottom: 10px;
+.hero-content {
+  max-width: 850px;
 }
 
-header p{
-    font-size: 20px;
-    opacity: 0.8;
+.hero h1 {
+  font-size: 64px;
+  line-height: 1.1;
+
+  color: #355845;
+
+  margin-bottom: 20px;
 }
+
+.hero-subtitle {
+  font-size: 22px;
+  color: #4B5E55;
+
+  margin-bottom: 36px;
+}
+
+
+/* ========= BOTÕES HERO ========= */
+
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+
+  flex-wrap: wrap;
+}
+
+.btn-primary,
+.btn-secondary {
+  padding: 14px 24px;
+  border-radius: 14px;
+
+  font-weight: 600;
+  text-decoration: none;
+
+  transition: 0.3s ease;
+}
+
+.btn-primary {
+  background: var(--verde-principal);
+  color: white;
+
+  border: none;
+}
+
+.btn-primary:hover {
+  background: #3a6447;
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  border: 1px solid var(--verde-principal);
+  color: var(--verde-principal);
+}
+
+.btn-secondary:hover {
+  background: rgba(74,124,89,0.08);
+}
+
+
+/* ========= SECTIONS ========= */
 
 section {
-    background-color: white;
-    padding: 30px;
-    margin: 20px auto;
-    max-width: 800px;
-    border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  max-width: 1200px;
+  margin: 80px auto;
+
+  padding: 0 24px;
 }
 
-header button {
-    margin-top: 20px;
-    background-color: #4A7C59;
+.section-header {
+  margin-bottom: 40px;
 }
 
-section + section {
-    margin-top: 40px;
+.section-header h2 {
+  font-size: 40px;
+  color: #355845;
 }
 
-h1 {
-    color: #5F7F73;
+
+/* ========= SOBRE ========= */
+
+.sobre-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+
+  align-items: center;
 }
 
-h2 {
-    color: #4A7C59;
-    margin-bottom: 15px;
-    border-left: 4px solid #A8D5BA;
-    padding-left: 10px;
+.sobre-texto h2 {
+  font-size: 42px;
+  color: #355845;
+
+  margin-bottom: 20px;
 }
 
-ul {
-    list-style: none;
+.sobre-texto p {
+  color: var(--texto-suave);
+  margin-bottom: 32px;
 }
 
-li {
-    margin-bottom: 10px;
+.sobre-info {
+  display: flex;
+  gap: 32px;
 }
 
-form {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+.sobre-info strong {
+  display: block;
+
+  font-size: 28px;
+  color: var(--verde-principal);
 }
 
-input, textarea {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
+.sobre-info span {
+  color: var(--texto-suave);
 }
 
-button {
-    background-color: #4A7C59;
-    color: white;
-    border: none;
-    padding: 14px;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: 0.3s;
+.sobre-img-wrapper img {
+  width: 100%;
+  height: 480px;
+
+  object-fit: cover;
+
+  border-radius: var(--radius);
+
+  box-shadow: var(--sombra);
 }
 
-button:hover {
-    background-color: #3a6447;
-    transform: scale(1.03);
-}
+
+/* ========= SERVIÇOS ========= */
 
 .cards {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 24px;
 }
 
 .card {
-  height: 300px;
-  border-radius: 16px;
-  overflow: hidden;
   position: relative;
-  cursor: pointer;
-  
+
+  height: 420px;
+
+  border-radius: var(--radius);
+  overflow: hidden;
+
   background-size: cover;
   background-position: center;
 
   transition: 0.3s ease;
+
+  cursor: pointer;
 }
 
 .card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-6px);
 }
-
-.card h3 {
-  margin-bottom: 5px;
-  font-size: 20px;
-}
-
-.card p {
-  font-size: 14px;
-  color: white;
-  opacity: 0.9;
-  line-height: 1.5;
-}
-
-.card:hover .overlay {
-  background: linear-gradient(transparent, rgba(0,0,0,0.85));
-}
-
-/*Overlay carrossel*/
-.overlay {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  padding: 20px;
-  
-  color: white;
-  transition: 0.3s ease;
-
-  background: linear-gradient(
-    transparent,
-    rgba(0,0,0,0.55));
-}
-
-.overlay h3 {
-    margin-bottom: 5px;
-    font-size: 20px;
-    color: #3a6447;
-    text-shadow: 0 2px 8px rgba(0,0,0,0.3);
-}
-
-.overlay p {
-    font-size: 14px;
-    opacity: 0.9;
-    line-height: 1.5;
-}
-
-/*Imagens agora em CSS*/
 
 .terapia {
-    background-image: url("terapia.jpg");
-}
-
-.online {
-    background-image: url("online.jpg");
+  background-image: url("terapia.jpg");
 }
 
 .casal {
-    background-image: url("casal.jpg");
+  background-image: url("casal.jpg");
 }
 
-@media (max-width: 768px) {
+.online {
+  background-image: url("online.jpg");
+}
+
+
+/* ========= OVERLAY ========= */
+
+.overlay {
+  position: absolute;
+  bottom: 0;
+
+  width: 100%;
+  padding: 24px;
+
+  color: white;
+
+  background:
+    linear-gradient(
+      transparent,
+      rgba(0,0,0,0.55)
+    );
+
+  transition: 0.3s ease;
+}
+
+.overlay h3 {
+  font-size: 28px;
+  margin-bottom: 10px;
+
+  color: white;
+}
+
+.overlay p {
+  font-size: 16px;
+  line-height: 1.5;
+
+  opacity: 0.95;
+}
+
+
+/* ========= DEPOIMENTOS ========= */
+
+.depoimentos-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+
+  gap: 24px;
+}
+
+.depoimento-card {
+  background: white;
+
+  padding: 32px;
+
+  border-radius: var(--radius);
+
+  box-shadow: var(--sombra);
+}
+
+.depoimento-card p {
+  margin-bottom: 20px;
+  color: var(--texto-suave);
+}
+
+
+/* ========= CONTATO ========= */
+
+.contato-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.contato-form input,
+.contato-form textarea {
+  padding: 18px;
+
+  border: 1px solid #d7dfda;
+  border-radius: 16px;
+
+  font-size: 16px;
+  font-family: inherit;
+
+  outline: none;
+}
+
+.contato-form input:focus,
+.contato-form textarea:focus {
+  border-color: var(--verde-principal);
+}
+
+
+/* ========= FOOTER ========= */
+
+.footer {
+  text-align: center;
+
+  padding: 40px 20px;
+
+  color: var(--texto-suave);
+}
+
+
+/* ========= RESPONSIVIDADE ========= */
+
+@media (max-width: 900px) {
+
   .cards {
     grid-template-columns: 1fr;
   }
 
-  header h1 {
-    font-size: 36px;
+  .sobre-grid {
+    grid-template-columns: 1fr;
   }
 
-  header p {
+  .depoimentos-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero h1 {
+    font-size: 48px;
+  }
+
+}
+
+
+@media (max-width: 768px) {
+
+  .nav-links,
+  .nav-cta {
+    display: none;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .hero h1 {
+    font-size: 38px;
+  }
+
+  .hero-subtitle {
     font-size: 18px;
   }
+
+  .section-header h2,
+  .sobre-texto h2 {
+    font-size: 32px;
+  }
+
 }
