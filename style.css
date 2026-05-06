@@ -477,3 +477,123 @@ html {
   scroll-behavior: smooth;
   scroll-padding-top: 100px;
 }
+
+/* ========= DEPOIMENTOS ========= */
+
+.depoimentos {
+  overflow: hidden;
+}
+
+.depoimentos-carousel {
+  width: 100%;
+  overflow: hidden;
+
+  position: relative;
+}
+
+.depoimentos-track {
+  display: flex;
+  gap: 24px;
+
+  width: max-content;
+
+  animation: scrollDepoimentos 28s linear infinite;
+}
+
+.depoimentos-track:hover {
+  animation-play-state: paused;
+}
+
+
+/* ========= CARD ========= */
+
+.depoimento-card {
+  min-width: 380px;
+  max-width: 380px;
+
+  background: white;
+
+  padding: 28px;
+
+  border-radius: 24px;
+
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+
+  transition: 0.3s ease;
+}
+
+.depoimento-card:hover {
+  transform: translateY(-6px);
+}
+
+
+/* ========= CLIENTE ========= */
+
+.cliente-info {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+
+  margin-bottom: 20px;
+}
+
+.cliente-info img {
+  width: 70px;
+  height: 70px;
+
+  border-radius: 50%;
+
+  object-fit: cover;
+  object-position: center;
+
+  flex-shrink: 0;
+
+  border: 3px solid #A8D5BA;
+}
+
+
+/* ========= TEXTO ========= */
+
+.cliente-info h3 {
+  font-size: 18px;
+  color: #355845;
+
+  margin-bottom: 4px;
+}
+
+.stars {
+  color: #f5b301;
+  font-size: 14px;
+}
+
+.depoimento-card p {
+  color: #5F6B63;
+  line-height: 1.7;
+}
+
+
+/* ========= ANIMAÇÃO ========= */
+
+@keyframes scrollDepoimentos {
+
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+
+}
+
+
+/* ========= RESPONSIVIDADE ========= */
+
+@media (max-width: 768px) {
+
+  .depoimento-card {
+    min-width: 300px;
+    max-width: 300px;
+  }
+
+}
